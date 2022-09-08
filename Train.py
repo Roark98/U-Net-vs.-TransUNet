@@ -121,7 +121,7 @@ if __name__ == '__main__':
     labels = os.listdir(path_lb)
 
     #Train-test split
-    X_train, X_test, y_train, y_test = train_test_split(images,labels, test_size=0.2, shuffle=False)
+    X_train, X_test, y_train, y_test = train_test_split(images,labels, test_size=0.2, shuffle=True)
     print('Train len: ',len(X_train))
     print('Test len: ',len(X_test))
 
