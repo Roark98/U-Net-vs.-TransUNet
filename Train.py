@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 from torchvision import transforms
 import json
-from Utils import CustomDataset, dice_score, get_model, dice_score_2
+from Utils import CustomDataset, dice_score, get_model
 import numpy as np
 import os
 from sklearn.model_selection import train_test_split
