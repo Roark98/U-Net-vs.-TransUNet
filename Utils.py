@@ -5,22 +5,6 @@ import cv2
 from TransUNet.networks.vit_seg_modeling import VisionTransformer as ViT_seg
 from TransUNet.networks.vit_seg_modeling import CONFIGS as CONFIGS_ViT_seg
 
-def dice_score_2(pred,true_mask):
-
-    pred = torch.from_numpy(pred)
-    true_mask = torch.from_numpy(true_mask)
-
-    pred = pred.view(-1)
-    mask = true_mask.view(-1)
-    
-    pred = (pred>0.5).float()
-    mask = mask.float()
-
-    intersection = (pred * mask).sum() 
-
-    dice = (intersection *2.0) / (pred.sum() + mask.sum())
-
-    return dice
 
 def dice_score(pred, label):
     intersection = 2.0 * (pred * label).sum()
