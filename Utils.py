@@ -28,7 +28,7 @@ class CustomDataset(Dataset):
 
   def __getitem__(self, idx):
     img_file_path = os.path.join(self.pathImg, self.images[idx])
-    lbl_file_path = os.path.join(self.pathLbl, self.labels[idx])
+    lbl_file_path = os.path.join(self.pathLbl, self.images[idx])
 
     img = cv2.imread(img_file_path, 0)
     mask = cv2.imread(lbl_file_path, 0)/255
